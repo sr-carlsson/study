@@ -1,4 +1,4 @@
-#Bandit Level 7 → Level 8
+#Bandit Level 7 → Level 8<br>
 The password for the next level is stored in the file data.txt next to the word millionth<br>
 이전 문제에서 찾은 비밀번호로 7번 문제에 접속.
 <br>millionth 옆에 적힌 비밀번호를 찾아야함.<br>
