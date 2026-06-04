@@ -1,4 +1,4 @@
-#Bandit Level 4 → Level 5
+# Bandit Level 4 → Level 5
 이전 문제에서 알아낸 비밀번호로 4번 문제 접속
 The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.
 
