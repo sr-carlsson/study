@@ -1,4 +1,4 @@
-#Bandit Level 2 → Level 3
+# Bandit Level 2 → Level 3
 The password for the next level is stored in a file called --spaces in this filename-- located in the home directory
 이전 문제에서 찾은 비밀번호로 2번 문제에 접속
 --spaces in this filename--이라는 이름의 파일에 저장된 비밀번호 찾기
