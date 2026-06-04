@@ -1,8 +1,0 @@
-#Bandit Level 5 → Level 6
-이전 문제에서 알아낸 비밀번호로 5번 문제에 접속.
-The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
-
-human-readable
-1033 bytes in size
-not executable
-
