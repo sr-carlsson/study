@@ -13,6 +13,9 @@ not executable
 find 명령어로 검색. find 현재위치(./) -size 1033c(1033byte인 파일 검색)
 <img width="566" height="122" alt="image" src="https://github.com/user-attachments/assets/6ecd484c-97ca-45e1-9300-1adf014c830c" />
 
+<img width="674" height="131" alt="image" src="https://github.com/user-attachments/assets/da43b4e5-2104-4fe8-92ef-b68cd11504d1" />
+
+
 검색할 때 c가 byte를 의미하는 것을 처음 알게 됨.
 
 - 2026.06.04
