@@ -10,3 +10,4 @@ owned by group bandit6<br>
 find로 조건에 맞게 검색했지만 수많은 에러 메시지가 나타나 원하는 파일을 찾기 어려움.
 
 <img width="952" height="528" alt="image" src="https://github.com/user-attachments/assets/e74049f9-6100-40c0-be4f-64af861bea22" />
+
