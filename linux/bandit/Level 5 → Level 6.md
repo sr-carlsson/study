@@ -2,8 +2,8 @@
 이전 문제에서 알아낸 비밀번호로 5번 문제에 접속.
 The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
 
-human-readable
-1033 bytes in size
+human-readable <br>
+1033 bytes in size <br>
 not executable
 
 <img width="847" height="166" alt="image" src="https://github.com/user-attachments/assets/e438e642-c306-45b5-8c27-a7afe4301979" />
