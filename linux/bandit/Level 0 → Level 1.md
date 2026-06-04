@@ -4,4 +4,4 @@ Level 0에서 접속한 ssh 서버에서 홈디렉터리에 위치한 readme 파
 ls 명령어로 readme 파일 확인 후 cat 명령어로 readme 파일의 내용 출력
 <img width="820" height="245" alt="image" src="https://github.com/user-attachments/assets/abaee919-0722-4d4f-9f55-0f68c997c8ec" />
 
--2026.06.04
+- 2026.06.04
