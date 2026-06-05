@@ -14,4 +14,4 @@ https://rot13.com/ 에 접속하면 다음과 같은 페이지를 확인할 수 
 <br>
 해당 사이트에 krypton2의 내용을 입력하면 LEVEL TWO PASSWORD ROTTEN 이라는 문자열이 반환된다.<br>
 <img width="1602" height="1354" alt="image" src="https://github.com/user-attachments/assets/87542743-937e-4e95-b2b1-da66fb0a4640" /><br>
--2026.06.05 
+- 2026.06.05 
