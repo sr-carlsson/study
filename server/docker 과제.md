@@ -18,6 +18,15 @@ docker run -it --name test-ubuntu-2004 ubuntu:20.04 /bin/bash 명령으로 test-
 <img width="1832" height="260" alt="image" src="https://github.com/user-attachments/assets/b63c5909-6a81-4f88-a704-3a82af640900" />
 <br> docker exec -it test-ubuntu-2004 /bin/bash로 다시 컨테이너에 /bin/bash로 접속한다.
 <img width="1532" height="166" alt="image" src="https://github.com/user-attachments/assets/6bf8725c-3d33-4e79-a1df-a07c2b0637f6" />
+<br>
+mkdir -p /home/sunrin/html으로 디렉터리 생성, docker run -d --name nginx-test -p 80:80 -v /home/$USER/html:/usr/share/nginx/html nginx로 백그라운드에서 nginx 컨테이너를 실행 및 /home/sunrin/html/ 경로를 컨테이너에 마운트 한다.<br>
+
+<img width="1864" height="502" alt="image" src="https://github.com/user-attachments/assets/53f4ed3d-6db7-42f4-b54e-234addbfaa37" />
+<br>
+이후 localhost로 접속하면 403 Forbidden Error를 확인할 수 있다.<br>
+<img width="906" height="404" alt="image" src="https://github.com/user-attachments/assets/190a9cc0-419f-452e-8638-08ec57df5b82" />
+해당 오류가 뜨는 이유는 /home/sunrin/html/ 안에 내용물이 없기 때문.<br>echo 명령어로 index.html 파일을 만들면 접속이 잘 되는 것을 볼 수 있다.
+<img width="1752" height="466" alt="image" src="https://github.com/user-attachments/assets/ef033ceb-b288-4e7d-8206-9f8518248b25" />
 
 # 과제 2
 - 아래 조건에 맞는 compose.yml 파일을 작성하여 제출
