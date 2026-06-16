@@ -11,6 +11,13 @@
         - **작업 디렉터리**: /usr/src/app
     - docker run을 이용하여 /home/$USER/sunrin-server/lab01-dockerfile/templates와 /usr/src/app/templates를 마운트
 <hr>
+docker run -it --name test-ubuntu-2004 ubuntu:20.04 /bin/bash 명령으로 test-ubuntu-2004 컨테이너를 생성함과 동시에 /bin/bash에 접속한다.
+
+<img width="1698" height="180" alt="image" src="https://github.com/user-attachments/assets/60956ba7-8c05-47be-9dad-cb4adfadaaac" />
+<br>이후 Ctrl + P, Ctrl + Q를 입력하면 /bin/bash를 빠져나올 수 있다.<br>docker ps로 아직 컨테이너가 실행 중인 것을 확인할 수 있다.<br>
+<img width="1832" height="260" alt="image" src="https://github.com/user-attachments/assets/b63c5909-6a81-4f88-a704-3a82af640900" />
+<br> docker exec -it test-ubuntu-2004 /bin/bash로 다시 컨테이너에 /bin/bash로 접속한다.
+<img width="1532" height="166" alt="image" src="https://github.com/user-attachments/assets/6bf8725c-3d33-4e79-a1df-a07c2b0637f6" />
 
 # 과제 2
 - 아래 조건에 맞는 compose.yml 파일을 작성하여 제출
