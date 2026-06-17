@@ -36,6 +36,9 @@ mkdir -p /home/sunrin/html으로 디렉터리 생성, docker run -d --name nginx
         - `nginx`: Reverse Proxy 역할 수행
     - 클라이언트 PC에서 접속 가능한지 확인
  <hr>
+해당 과제는 인터넷 서칭 및 ai를 이용하였다.
+<br><br>
+
 
 # 과제 3
 ### 나만의 컨테이너 만들기
