@@ -36,9 +36,94 @@ mkdir -p /home/sunrin/html으로 디렉터리 생성, docker run -d --name nginx
         - `nginx`: Reverse Proxy 역할 수행
     - 클라이언트 PC에서 접속 가능한지 확인
  <hr>
-해당 과제는 인터넷 서칭 및 ai를 이용하였다.
-<br><br>
+과제 수행을 위해 /home/sunrin/server 디렉터리를 생성한다.<br>그 뒤, app.py와 requirements.txt과 이를 참조할 Dockerfile이 들어간 /home/sunrin/server/web 디렉터리를 생성한다.<br>
+이후 web 디렉터리 안에 app.py에 해당 내용을 저장한다.
 
+    from flask import Flask
+
+    app = Flask(__name__)
+
+    @app.route("/")
+    def home():
+        return "Hello Flask + Nginx + MySQL"
+
+    if __name__ == "__main__":
+        app.run(host="0.0.0.0", port=5000)
+<br>
+nano /home/sunrin/server/web/requirements.txt 에는
+
+    flask
+
+/home/sunrin/server/web/Dockerfile 에는 
+
+    FROM python:3.11-slim
+
+    WORKDIR /app
+
+    COPY requirements.txt .
+    RUN pip install -r requirements.txt
+
+    COPY . .
+
+    CMD ["python", "app.py"]
+
+그 뒤, nginx를 설정할 /home/sunrin/server/nginx 디렉터리를 생성한다.
+<br>/home/sunrin/server/nginx/default.conf 를 생성한 뒤 해당 내용을 저장한다.
+
+    server {
+        listen 80;
+
+        location / {
+            proxy_pass http://web:5000;
+
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+    }
+
+다음으로 /home/sunrin/server/compose.yml 에는 해당 내용을 저장한다.
+
+    services:
+      web:
+        build: ./web
+        container_name: flask_web
+    
+      db:
+        image: mysql:5.7
+        container_name: mysql_db
+        restart: always
+        environment:
+          MYSQL_ROOT_PASSWORD: 1234
+          MYSQL_DATABASE: testdb
+        volumes:
+          - mysql_data:/var/lib/mysql
+    
+      nginx:
+        image: nginx:latest
+        container_name: nginx_proxy
+        ports:
+          - "80:80"
+        volumes:
+          - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+        depends_on:
+          - web
+    
+    volumes:
+      mysql_data:
+
+/home/sunrin/server으로 이동한 뒤, docker compose up -d로 docker compose에 정의된 서비스를 생성하고 실행한다.
+
+<img width="2304" height="1098" alt="image" src="https://github.com/user-attachments/assets/b21c5c1f-63a0-418d-b7a6-a9b4b2b84033" />
+
+해당 과정을 거쳐 서비스의 생성 및 실행이 완료되면 
+
+<img width="2338" height="660" alt="image" src="https://github.com/user-attachments/assets/d25c04c0-b2cf-4e52-b1f0-98c138450a1e" />
+
+docker ps로 확인했을 때 3개의 컨테이너가 생성된 것을 볼 수 있다.
+<br>localhost를 확인하면 Hello Flask + Nginx + MySQL가 출력되며, 클라이언트 pc에서 접속시 Hello Flask + Nginx + MySQL가 출력되는 페이지를 확인할 수 있다.
+<img width="1270" height="126" alt="image" src="https://github.com/user-attachments/assets/eb6ecda8-9a0a-4b5c-b6c7-319233f3ecd8" />
+
+<img width="1178" height="498" alt="image" src="https://github.com/user-attachments/assets/dc6d9659-bc02-4ca4-87d8-85fefd786e12" />
 
 # 과제 3
 ### 나만의 컨테이너 만들기
